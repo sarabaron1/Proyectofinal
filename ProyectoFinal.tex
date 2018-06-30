@@ -8,7 +8,7 @@
 
 
 
-\title{LOS INDICES DE COLOMBIA}
+\title{LOS ÍNDICES DE COLOMBIA}
 % autores
 \author[1]{\normalsize Sara Barón}
 \affil[1]{\small  Escuela de Ingeniería,Universidad de los Andes\\
@@ -44,13 +44,13 @@ Comencemos viendo que hay en la sección \ref{univariada} en la página \pageref
 
 \section{Exploración Univariada}\label{univariada}
 
-En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada ??ndice. En esta sección exploro cada índic. En esta sección exploro cada ??ndice. En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índice.
+En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índic. En esta sección exploro cada ??ndice. En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índice.
 
-%Estad?sticos
+%Estadísticos
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: vie., jun. 29, 2018 - 7:22:25 p. m.
+% Date and time: vie., jun. 29, 2018 - 8:11:26 p. m.
 \begin{table}[!htbp] \centering 
-  \caption{Medidas estad?sticas} 
+  \caption{Medidas estadísticas} 
   \label{stats} 
 \begin{tabular}{@{\extracolsep{5pt}}lcc} 
 \\[-1.8ex]\hline 
@@ -72,6 +72,8 @@ Población.Resto & 32 & 268,111.5 \\
 \label{hist}
 \end{figure}
 
+Como se muestra en la figura \ref{hist} los datos no se encuentran normalizados, por ende se muestra la figura \ref{histnorm} con el fin de mejorar los datos datos se acercaron a la normalidad.Como se muestra en la figura \ref{hist} los datos no se encuentran normalizados, por ende se muestra la figura \ref{histnorm} con el fin de mejorar los datos datos se acercaron a la normalidad.
+
 \begin{figure}[h]
 \centering
 \begin{adjustbox}{width=7cm,height=7cm,clip,trim=1.5cm 0.5cm 0cm 1.5cm}
@@ -81,24 +83,28 @@ Población.Resto & 32 & 268,111.5 \\
 \label{histnorm}
 \end{figure}
 
+Continuamos viendo que hay en la sección \ref{bivariada} en la página \pageref{bivariada}.
 
-%Exploracion Bivariada ---------------------------------------------------
+\section{Exploración Bivariada}\label{bivariada}
+
+Con el fin de obervar el impacto de la población en el IDH, obervamos el IDH con cada uno y su correlación, como se muestra en la tabla \ref{Corr}. Con el fin de obervar el impacto de la población en el IDH, obervamos el IDH con cada uno y su correlación, como se muestra en la tabla \ref{Corr}. Con el fin de obervar el impacto de la población en el IDH, obervamos el IDH con cada uno y su correlación, como se muestra en la tabla \ref{Corr}
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: vie., jun. 29, 2018 - 7:22:25 p. m.
+% Date and time: vie., jun. 29, 2018 - 8:11:26 p. m.
 \begin{table}[!htbp] \centering 
-  \caption{Correlaci?n entre variables independientes} 
+  \caption{Correlación entre variables independientes} 
   \label{Corr} 
-\begin{tabular}{@{\extracolsep{5pt}} cc} 
+\begin{tabular}{@{\extracolsep{5pt}} ccc} 
 \\[-1.8ex]\hline 
 \hline \\[-1.8ex] 
-cabeLog & restoLog \\ 
+ & cabeLog & restoLog \\ 
 \hline \\[-1.8ex] 
-$0.487$ & $0.177$ \\ 
+cabeLog & $1$ & $0.840$ \\ 
+restoLog & $0.840$ & $1$ \\ 
 \hline \\[-1.8ex] 
 \end{tabular} 
 \end{table} 
-% Correlaci?n entre variables independientes.
+Adicionalmente, se muestra la Correlación entre variables independientes, en la figura \ref{CorrInd}. Adicionalmente, se muestra la Correlación entre variables independientes, en la figura \ref{CorrInd}. Adicionalmente, se muestra la Correlación entre variables independientes, en la figura \ref{CorrInd}. Adicionalmente, se muestra la Correlación entre variables independientes, en la figura \ref{CorrInd}.Adicionalmente, se muestra la Correlación entre variables independientes, en la figura \ref{CorrInd}. Adicionalmente, se muestra la Correlación entre variables independientes, en la figura \ref{CorrInd}.
 
 \begin{figure}[h]
 \centering
@@ -106,20 +112,19 @@ $0.487$ & $0.177$ \\
 
 \includegraphics{ProyectoFinal-CorrInd}
 \end{adjustbox}
-\caption{Correlaci?n}
+\caption{Correlación}
 \label{CorrInd}
 \end{figure}
 
-%Modelos de Regresión ----------------------------------------------------
+\section{Modelos de Regresión}\label{ModReg}
 
-%Veamos los modelos propuestos. 
-%Primero sin poblacion resto, luego con esa:
+A continuación (\ref{regresiones}), se observan los modelos de regresión, en el primero no se tiene en cuenta la población restante y el segundo modelo ya tiene ambas variables.A continuación (\ref{regresiones}), se observan los modelos de regresión, en el primero no se tiene en cuenta la población restante y el segundo modelo ya tiene ambas variables.A continuación (\ref{regresiones}), se observan los modelos de regresión, en el primero no se tiene en cuenta la población restante y el segundo modelo ya tiene ambas variables.A continuación (\ref{regresiones}), se observan los modelos de regresión, en el primero no se tiene en cuenta la población restante y el segundo modelo ya tiene ambas variables.A continuación (\ref{regresiones}), se observan los modelos de regresión, en el primero no se tiene en cuenta la población restante y el segundo modelo ya tiene ambas variables.A continuación (\ref{regresiones}), se observan los modelos de regresión, en el primero no se tiene en cuenta la población restante y el segundo modelo ya tiene ambas variables.
 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: vie., jun. 29, 2018 - 7:22:25 p. m.
+% Date and time: vie., jun. 29, 2018 - 8:11:26 p. m.
 \begin{table}[!htbp] \centering 
-  \caption{Modelos de Regresi?n} 
+  \caption{Modelos de Regresión} 
   \label{regresiones} 
 \begin{tabular}{@{\extracolsep{5pt}}lcc} 
 \\[-1.8ex]\hline 
@@ -149,17 +154,20 @@ F Statistic & 9.347$^{***}$ (df = 1; 30) & 10.706$^{***}$ (df = 2; 29) \\
 \textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
 \end{tabular} 
 \end{table} 
+\section{Exploración Espacial}\label{ExpEspa}
+
+A continuaicón, se usara la tecnica de k-means propuesta por MacQueen \cite{macqueen_methods_nodate} para conglomerar toda la información y mostrar la información en el mapa de Colombia como se observa en \ref{clustmap}. A continuaicón, se usara la tecnica de k-means propuesta por MacQueen \cite{macqueen_methods_nodate} para conglomerar toda la información y mostrar la información en el mapa de Colombia como se observa en \ref{clustmap}.A continuaicón, se usara la tecnica de k-means propuesta por MacQueen \cite{macqueen_methods_nodate} para conglomerar toda la información y mostrar la información en el mapa de Colombia como se observa en \ref{clustmap}.A continuaicón, se usara la tecnica de k-means propuesta por MacQueen \cite{macqueen_methods_nodate} para conglomerar toda la información y mostrar la información en el mapa de Colombia como se observa en \ref{clustmap}.A continuaicón, se usara la tecnica de k-means propuesta por MacQueen \cite{macqueen_methods_nodate} para conglomerar toda la información y mostrar la información en el mapa de Colombia como se observa en \ref{clustmap}. A continuaicón, se usara la tecnica de k-means propuesta por MacQueen \cite{macqueen_methods_nodate} para conglomerar toda la información y mostrar la información en el mapa de Colombia como se observa en \ref{clustmap}.A continuaicón, se usara la tecnica de k-means propuesta por MacQueen \cite{macqueen_methods_nodate} para conglomerar toda la información y mostrar la información en el mapa de Colombia como se observa en \ref{clustmap}.A continuaicón, se usara la tecnica de k-means propuesta por MacQueen \cite{macqueen_methods_nodate} para conglomerar toda la información y mostrar la información en el mapa de Colombia como se observa en \ref{clustmap}.
 
 
 
-hola \cite{macqueen_methods_nodate}
+
 \begin{figure}[h]
 \centering
 \begin{adjustbox}{}
 
 \includegraphics{ProyectoFinal-plotMapa}
 \end{adjustbox}
-\caption{Departamentos conglomerados seg?n sus indicadores}\label{clustmap}
+\caption{Departamentos conglomerados según sus indicadores}\label{clustmap}
 \end{figure}
 
 \bibliographystyle{abbrv}

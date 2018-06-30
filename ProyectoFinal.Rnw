@@ -8,7 +8,7 @@
 
 
 
-\title{LOS INDICES DE COLOMBIA}
+\title{LOS ÍNDICES DE COLOMBIA}
 % autores
 \author[1]{\normalsize Sara Barón}
 \affil[1]{\small  Escuela de Ingeniería,Universidad de los Andes\\
@@ -52,14 +52,14 @@ Comencemos viendo que hay en la sección \ref{univariada} en la página \pageref
 
 \section{Exploración Univariada}\label{univariada}
 
-En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada ??ndice. En esta sección exploro cada índic. En esta sección exploro cada ??ndice. En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índice.
+En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índic. En esta sección exploro cada ??ndice. En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índice. En esta sección exploro cada índice.
 
-%Estad?sticos
+%Estadísticos
 <<summary,results=tex,echo=FALSE>>=
 library(stargazer)
 vars1 <- colb[, c(1:4)]
 
-stargazer(vars1,title = "Medidas estad?sticas", label = "stats",summary.stat = c("n", "median"))
+stargazer(vars1,title = "Medidas estadísticas", label = "stats",summary.stat = c("n", "median"))
 @
 
 \begin{figure}[h]
@@ -82,6 +82,8 @@ hist(colb[,4],
 \label{hist}
 \end{figure}
 
+Como se muestra en la figura \ref{hist} los datos no se encuentran normalizados, por ende se muestra la figura \ref{histnorm} con el fin de mejorar los datos datos se acercaron a la normalidad.Como se muestra en la figura \ref{hist} los datos no se encuentran normalizados, por ende se muestra la figura \ref{histnorm} con el fin de mejorar los datos datos se acercaron a la normalidad.
+
 \begin{figure}[h]
 \centering
 \begin{adjustbox}{width=7cm,height=7cm,clip,trim=1.5cm 0.5cm 0cm 1.5cm}
@@ -103,19 +105,24 @@ hist(colb$restoLog,
 \label{histnorm}
 \end{figure}
 
+Continuamos viendo que hay en la sección \ref{bivariada} en la página \pageref{bivariada}.
 
-%Exploracion Bivariada ---------------------------------------------------
+\section{Exploración Bivariada}\label{bivariada}
+
+Con el fin de obervar el impacto de la población en el IDH, obervamos el IDH con cada uno y su correlación, como se muestra en la tabla \ref{Corr}. Con el fin de obervar el impacto de la población en el IDH, obervamos el IDH con cada uno y su correlación, como se muestra en la tabla \ref{Corr}. Con el fin de obervar el impacto de la población en el IDH, obervamos el IDH con cada uno y su correlación, como se muestra en la tabla \ref{Corr}
 
 <<Corr,results=tex,echo=FALSE>>=
 
 explanans=names(colb)[c(7:8)]
-corrDem=cor(colb[,1],colb[,explanans],
-            use = "na.or.complete")
-stargazer(corrDem, title="Correlaci?n entre variables independientes",label = 'Corr')
+corrTableX=round(cor(colb[,explanans],
+                         use = "na.or.complete"),2)
+corrTableX_copy=corrTableX
+corrTableX[upper.tri(corrTableX)]<-""
+stargazer(corrTableX_copy, title="Correlación entre variables independientes",label = 'Corr')
 
 @
 
-% Correlaci?n entre variables independientes.
+Adicionalmente, se muestra la Correlación entre variables independientes, en la figura \ref{CorrInd}. Adicionalmente, se muestra la Correlación entre variables independientes, en la figura \ref{CorrInd}. Adicionalmente, se muestra la Correlación entre variables independientes, en la figura \ref{CorrInd}. Adicionalmente, se muestra la Correlación entre variables independientes, en la figura \ref{CorrInd}.Adicionalmente, se muestra la Correlación entre variables independientes, en la figura \ref{CorrInd}. Adicionalmente, se muestra la Correlación entre variables independientes, en la figura \ref{CorrInd}.
 
 \begin{figure}[h]
 \centering
@@ -131,14 +138,13 @@ plot(colb[,explanans])
 
 @
 \end{adjustbox}
-\caption{Correlaci?n}
+\caption{Correlación}
 \label{CorrInd}
 \end{figure}
 
-%Modelos de Regresión ----------------------------------------------------
+\section{Modelos de Regresión}\label{ModReg}
 
-%Veamos los modelos propuestos. 
-%Primero sin poblacion resto, luego con esa:
+A continuación (\ref{regresiones}), se observan los modelos de regresión, en el primero no se tiene en cuenta la población restante y el segundo modelo ya tiene ambas variables.A continuación (\ref{regresiones}), se observan los modelos de regresión, en el primero no se tiene en cuenta la población restante y el segundo modelo ya tiene ambas variables.A continuación (\ref{regresiones}), se observan los modelos de regresión, en el primero no se tiene en cuenta la población restante y el segundo modelo ya tiene ambas variables.A continuación (\ref{regresiones}), se observan los modelos de regresión, en el primero no se tiene en cuenta la población restante y el segundo modelo ya tiene ambas variables.A continuación (\ref{regresiones}), se observan los modelos de regresión, en el primero no se tiene en cuenta la población restante y el segundo modelo ya tiene ambas variables.A continuación (\ref{regresiones}), se observan los modelos de regresión, en el primero no se tiene en cuenta la población restante y el segundo modelo ya tiene ambas variables.
 
 <<Modelos, echo=FALSE>>=
 LinRegA = lm(IDH ~ ., data = colb[,c(1,7)])
@@ -147,9 +153,14 @@ LinRegB = lm(IDH ~ ., data = colb[,c(1,7:8)])
 
 <<regresionesPlot,results=tex, echo=FALSE>>=
 stargazer(LinRegA,LinRegB,
-          title = "Modelos de Regresi?n", 
+          title = "Modelos de Regresión", 
           label = "regresiones")
 @
+
+\section{Exploración Espacial}\label{ExpEspa}
+
+A continuaicón, se usara la tecnica de k-means propuesta por MacQueen \cite{macqueen_methods_nodate} para conglomerar toda la información y mostrar la información en el mapa de Colombia como se observa en \ref{clustmap}. A continuaicón, se usara la tecnica de k-means propuesta por MacQueen \cite{macqueen_methods_nodate} para conglomerar toda la información y mostrar la información en el mapa de Colombia como se observa en \ref{clustmap}.A continuaicón, se usara la tecnica de k-means propuesta por MacQueen \cite{macqueen_methods_nodate} para conglomerar toda la información y mostrar la información en el mapa de Colombia como se observa en \ref{clustmap}.A continuaicón, se usara la tecnica de k-means propuesta por MacQueen \cite{macqueen_methods_nodate} para conglomerar toda la información y mostrar la información en el mapa de Colombia como se observa en \ref{clustmap}.A continuaicón, se usara la tecnica de k-means propuesta por MacQueen \cite{macqueen_methods_nodate} para conglomerar toda la información y mostrar la información en el mapa de Colombia como se observa en \ref{clustmap}. A continuaicón, se usara la tecnica de k-means propuesta por MacQueen \cite{macqueen_methods_nodate} para conglomerar toda la información y mostrar la información en el mapa de Colombia como se observa en \ref{clustmap}.A continuaicón, se usara la tecnica de k-means propuesta por MacQueen \cite{macqueen_methods_nodate} para conglomerar toda la información y mostrar la información en el mapa de Colombia como se observa en \ref{clustmap}.A continuaicón, se usara la tecnica de k-means propuesta por MacQueen \cite{macqueen_methods_nodate} para conglomerar toda la información y mostrar la información en el mapa de Colombia como se observa en \ref{clustmap}.
+
 <<getMap, echo=FALSE,results=hide>>=
 library(rgdal)
 folder='COL_maps'
@@ -190,8 +201,6 @@ names(clusters)=c('cluster','NAME_1')
 mapCol_idh=merge(mapCol_idh,clusters, by='NAME_1',all.x=F)
 @
 
-
-hola \cite{macqueen_methods_nodate}
 \begin{figure}[h]
 \centering
 \begin{adjustbox}{}
@@ -212,7 +221,7 @@ legend('left', legend = c("LOW","UP","MEDIUM"),
        title="Conglomerado")
 @
 \end{adjustbox}
-\caption{Departamentos conglomerados seg?n sus indicadores}\label{clustmap}
+\caption{Departamentos conglomerados según sus indicadores}\label{clustmap}
 \end{figure}
 
 \bibliographystyle{abbrv}
